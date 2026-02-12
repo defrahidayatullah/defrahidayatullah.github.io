@@ -1,0 +1,157 @@
+/* ===== SMOOTH, GENTLE ANIMATIONS ===== */
+
+/* Fade-up pada scroll */
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+.fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark .bg-white {
+  background-color: #0f172a;
+}
+
+#connect .flex .w-1\.5 {
+  flex-shrink: 0;
+}
+
+.hs-collapse {
+  transition: max-height 0.25s ease-out, opacity 0.2s ease;
+}
+
+/* Fallback gambar */
+img[onerror] {
+  background: linear-gradient(145deg, #1e3a8a, #1e293b);
+}
+
+/* ===== ANIMASI HALUS TAMBAHAN ===== */
+
+/* 1. Card expertise — efek hover */
+.bg-white.rounded-2xl,
+.dark .bg-slate-900.rounded-2xl {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.4, 1),
+              box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.4, 1),
+              border-color 0.2s ease;
+}
+.bg-white.rounded-2xl:hover,
+.dark .bg-slate-900.rounded-2xl:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+  border-color: #2563eb40;
+}
+.dark .bg-slate-900.rounded-2xl:hover {
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.6);
+  border-color: #60a5fa40;
+}
+
+/* 2. Tombol utama & sekunder */
+.bg-blue-700, .bg-slate-900, .bg-green-600, .bg-white.border {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.4, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+.bg-blue-700:hover, .bg-slate-900:hover, .bg-green-600:hover {
+  transform: scale(1.02);
+}
+.bg-white.border:hover {
+  transform: scale(1.01);
+  background-color: #f8fafc;
+}
+.dark .bg-white.border:hover {
+  background-color: #1e293b;
+}
+
+/* 3. Ikon sosial media — hover lebih hidup */
+.text-slate-500 {
+  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+.text-slate-500:hover {
+  transform: scale(1.15);
+}
+
+/* 4. Foto profil — efek hover subtle */
+.relative.w-64.h-64 img,
+.relative.md\:w-72.md\:h-72 img {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.4, 1),
+              border-color 0.3s ease,
+              box-shadow 0.4s ease;
+}
+.relative.w-64.h-64 img:hover,
+.relative.md\:w-72.md\:h-72 img:hover {
+  transform: scale(1.02);
+  border-color: #2563eb;
+  box-shadow: 0 20px 28px -8px rgba(37, 99, 235, 0.25);
+}
+.dark .relative.w-64.h-64 img:hover,
+.dark .relative.md\:w-72.md\:h-72 img:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 20px 28px -8px rgba(96, 165, 250, 0.25);
+}
+
+/* 5. Badge "Tersedia" — pulse ringan */
+.bg-blue-100.dark\:bg-blue-900\/40.rounded-full {
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+}
+.bg-blue-100.dark\:bg-blue-900\/40.rounded-full:hover {
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
+}
+.dark .bg-blue-100.dark\:bg-blue-900\/40.rounded-full:hover {
+  box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.1);
+}
+
+/* 6. Navbar link — underline animation */
+.nav-links a, .md\:flex a, .flex.space-x-8 a {
+  position: relative;
+}
+.nav-links a::after, .md\:flex a::after, .flex.space-x-8 a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+.nav-links a:hover::after, .md\:flex a:hover::after, .flex.space-x-8 a:hover::after {
+  width: 100%;
+}
+.dark .nav-links a::after, .dark .md\:flex a::after, .dark .flex.space-x-8 a::after {
+  background-color: #60a5fa;
+}
+
+/* 7. Tombol Download CV & Email di footer — underline halus */
+footer a.underline {
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+footer a.underline:hover {
+  letter-spacing: 0.5px;
+}
+
+/* 8. Preline mobile menu — smooth */
+.hs-collapse {
+  transition: max-height 0.3s cubic-bezier(0.2, 0.8, 0.4, 1), 
+              opacity 0.2s ease,
+              transform 0.2s ease;
+}
+
+/* 9. Focus outline tetap terjaga */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+.dark a:focus-visible,
+.dark button:focus-visible {
+  outline-color: #60a5fa;
+}
